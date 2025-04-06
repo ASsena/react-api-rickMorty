@@ -1,38 +1,146 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik:wght@400;600&display=swap');
+
+/* Fundo */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  min-height: 100vh;
+}
+
+/* Título com efeito */
+.titulo-neon {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #72ffd3;
+  border: 2px solid #72ffd3;
+  padding: 15px 25px;
+  width: fit-content;
+  margin: 50px auto 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #72ffd3;
+  animation: pulse 2s infinite ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px #72ffd3; }
+  50% { box-shadow: 0 0 25px #72ffd3; }
+}
+
+/* Barra de pesquisa */
+.pesquisa-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pesquisa-neon {
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: none;
+  width: 80%;
+  max-width: 500px;
+  font-size: 16px;
+  color: white;
+  background-color: #262626;
+  box-shadow: 0 0 8px #58fcb9;
+  outline: none;
+  transition: 0.3s;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pesquisa-neon::placeholder {
+  color: #aaa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pesquisa-neon:focus {
+  box-shadow: 0 0 15px #72ffd3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container geral dos cards */
+.container-filmes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* Estilo dos cards */
+.card-glow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #1c1c1c;
+  border-radius: 20px;
+  width: 420px;
+  padding: 15px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(88, 252, 185, 0.3);
+  transition: 0.3s ease;
+  border: 1px solid #333;
+}
+
+.card-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(88, 252, 185, 0.5);
+}
+
+/* Imagem arredondada */
+.card-glow img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #58fcb9;
+}
+
+/* Informações */
+.info {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.info h2 {
+  margin: 0;
+  color: #72ffd3;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.filtros button {
+  background-color: #1f1f1f;
+  border: 1px solid #58fcb9;
+  color: #72ffd3;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Rubik', sans-serif;
+}
+
+.filtros button:hover {
+  background-color: #58fcb9;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #58fcb9;
 }
