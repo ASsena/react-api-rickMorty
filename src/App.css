@@ -1,42 +1,45 @@
+/* Importa duas fontes do Google Fonts: Orbitron e Rubik */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik:wght@400;600&display=swap');
 
-/* Fundo */
+/* Configurações gerais do corpo da página */
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  color: white;
-  font-family: 'Rubik', sans-serif;
-  min-height: 100vh;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a); /* Fundo em degradê escuro */
+  color: white; /* Cor padrão do texto */
+  font-family: 'Rubik', sans-serif; /* Fonte padrão */
+  min-height: 100vh; /* Altura mínima de 100% da tela */
 }
 
-/* Título com efeito */
+/* Estilo do título principal com efeito neon */
 .titulo-neon {
   font-size: 3.5rem;
   text-align: center;
   color: #72ffd3;
   border: 2px solid #72ffd3;
   padding: 15px 25px;
-  width: fit-content;
-  margin: 50px auto 20px;
+  width: fit-content; /* Largura baseada no conteúdo */
+  margin: 50px auto 20px; /* Centraliza com margens superior e inferior */
   border-radius: 15px;
-  box-shadow: 0 0 15px #72ffd3;
-  animation: pulse 2s infinite ease-in-out;
-  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 15px #72ffd3; /* Efeito de brilho */
+  animation: pulse 2s infinite ease-in-out; /* Aplica a animação 'pulse' */
+  font-family: 'Orbitron', sans-serif; /* Fonte especial para o título */
 }
 
+/* Animação de pulsar para o brilho do título */
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 10px #72ffd3; }
   50% { box-shadow: 0 0 25px #72ffd3; }
 }
 
-/* Barra de pesquisa */
+/* Container da barra de pesquisa */
 .pesquisa-container {
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
+/* Estilo da barra de pesquisa com bordas arredondadas e neon */
 .pesquisa-neon {
   padding: 15px 20px;
   border-radius: 50px;
@@ -52,27 +55,29 @@ body {
   text-align: center;
 }
 
+/* Cor do placeholder (texto de dica dentro da barra) */
 .pesquisa-neon::placeholder {
   color: #aaa;
 }
 
+/* Efeito ao focar na barra de pesquisa */
 .pesquisa-neon:focus {
   box-shadow: 0 0 15px #72ffd3;
 }
 
-/* Container geral dos cards */
+/* Container que guarda todos os cards */
 .container-filmes {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que os cards quebrem linha */
   justify-content: center;
   gap: 30px;
   padding: 30px;
 }
 
-/* Estilo dos cards */
+/* Estilo dos cards com efeito glow */
 .card-glow {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Alinha imagem e info lado a lado */
   align-items: center;
   background: #1c1c1c;
   border-radius: 20px;
@@ -84,40 +89,43 @@ body {
   border: 1px solid #333;
 }
 
+/* Efeito ao passar o mouse no card */
 .card-glow:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(88, 252, 185, 0.5);
+  transform: translateY(-5px); /* Eleva levemente o card */
+  box-shadow: 0 0 20px rgba(88, 252, 185, 0.5); /* Aumenta o brilho */
 }
 
-/* Imagem arredondada */
+/* Estilo da imagem dentro do card */
 .card-glow img {
   width: 110px;
   height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 50%; /* Deixa a imagem redonda */
+  object-fit: cover; /* Garante que a imagem preencha bem o espaço */
   border: 2px solid #58fcb9;
 }
 
-/* Informações */
+/* Container das informações do personagem */
 .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+/* Nome do personagem */
 .info h2 {
   margin: 0;
   color: #72ffd3;
   font-size: 20px;
 }
 
+/* Informações complementares */
 .info p {
   margin: 4px 0;
   font-size: 14px;
   color: #ccc;
 }
 
-
+/* Container dos botões de filtro */
 .filtros {
   display: flex;
   justify-content: center;
@@ -126,6 +134,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Estilo dos botões de filtro */
 .filtros button {
   background-color: #1f1f1f;
   border: 1px solid #58fcb9;
@@ -138,6 +147,7 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
+/* Efeito ao passar o mouse nos botões */
 .filtros button:hover {
   background-color: #58fcb9;
   color: #000;
